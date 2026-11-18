@@ -9,6 +9,7 @@
   <meta property="og:description" content="A modular, Liquid Glass Dynamic Island & Notch Hub for macOS." />
   <meta property="og:image" content="assets/hub-home.png" />
   <meta name="theme-color" content="#0a0908" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23060606'/%3E%3Crect x='16' y='19' width='32' height='21' rx='3' fill='none' stroke='%23ffffff' stroke-width='3.5'/%3E%3Cline x1='11' y1='46' x2='53' y2='46' stroke='%23ffffff' stroke-width='3.5' stroke-linecap='round'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -157,58 +158,24 @@ em { font-style: italic; }
 .nav > * { pointer-events: auto; }
 .nav__brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 500; font-size: 15px; letter-spacing: -.01em; height: 38px; }
 .nav__brand b { font-weight: 700; margin-left: 2px; }
-.brand-mark { width: 26px; height: 26px; border-radius: 8px; background: linear-gradient(145deg, #2a2622, #0b0a09); border: 1px solid var(--line-2); display: grid; place-items: start center; overflow: hidden; }
-.brand-mark i { width: 14px; height: 5px; background: #000; border-radius: 0 0 4px 4px; box-shadow: 0 1px 0 rgba(255,255,255,.2); margin-top: -1px; }
+.brand-mark { width: 28px; height: 28px; border-radius: 8px; background: #060606; border: 1px solid var(--line-2); display: grid; place-items: center; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,.45); }
+.brand-mark svg { width: 100%; height: 100%; display: block; }
 
-.island {
-  position: absolute; top: 0; left: 0; right: 0; margin: 0 auto;
-  --w: 210px; --h: 38px;
-  width: var(--w); height: var(--h);
-  background: #000; color: #fff;
-  border-radius: 0 0 22px 22px;
-  transition: width .7s var(--spring), height .7s var(--spring), border-radius .5s var(--ease), box-shadow .5s;
-  box-shadow: 0 10px 40px rgba(0,0,0,.55), inset 0 -1px 0 rgba(255,255,255,.08);
+.nav { align-items: center; }
+.nav__links {
+  display: flex; align-items: center; gap: 4px; padding: 5px;
+  border-radius: 999px;
+  background: rgba(18, 16, 14, .65);
+  border: 1px solid var(--line-2);
+  backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 12px 32px rgba(0,0,0,.45);
 }
-/* inverted top corners — like the real notch */
-.island::before, .island::after {
-  content: ""; position: absolute; top: 0; width: 14px; height: 14px;
-  background: radial-gradient(circle at 100% 100%, transparent 13.5px, #000 14px);
+.nav__links a {
+  font-size: 13.5px; font-weight: 500; color: var(--ink-2);
+  padding: 7px 14px; border-radius: 999px;
+  transition: background .25s, color .25s;
 }
-.island::before { left: -14px; transform: scaleX(-1); }
-.island::after { right: -14px; }
-.island[data-state="music"]   { --w: 360px; --h: 40px; }
-.island[data-state="weather"] { --w: 320px; --h: 40px; }
-.island[data-state="nav"]     { --w: 540px; --h: 50px; border-radius: 0 0 26px 26px; box-shadow: 0 20px 60px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.06), inset 0 -1px 0 rgba(255,255,255,.1); }
-.island__inner { position: absolute; inset: 0; overflow: hidden; border-radius: inherit; }
-.island__view {
-  position: absolute; inset: 0; display: flex; align-items: center; justify-content: space-between;
-  padding: 0 18px; gap: 12px; white-space: nowrap;
-  opacity: 0; filter: blur(6px); transform: scale(.92);
-  transition: opacity .35s, filter .45s, transform .6s var(--spring);
-  pointer-events: none;
-}
-.island[data-state="clock"]   .island__view--clock,
-.island[data-state="music"]   .island__view--music,
-.island[data-state="weather"] .island__view--weather,
-.island[data-state="nav"]     .island__view--nav { opacity: 1; filter: none; transform: none; pointer-events: auto; transition-delay: .12s; }
-.island__time { font-weight: 700; font-size: 13.5px; font-variant-numeric: tabular-nums; }
-.island__batt { display: inline-flex; align-items: center; gap: 4px; font-size: 12.5px; color: rgba(255,255,255,.9); font-weight: 600; }
-.island__batt i { font-style: normal; color: #34c759; filter: drop-shadow(0 0 6px rgba(52,199,89,.6)); }
-.island__art { width: 24px; height: 24px; border-radius: 6px; flex: none; background: linear-gradient(160deg, #f4a259 0%, #b5482a 45%, #2b0f0b 100%); box-shadow: inset 0 0 0 1px rgba(255,255,255,.15); position: relative; overflow: hidden; }
-.island__art::after { content: "F1"; position: absolute; inset: 0; display: grid; place-items: center; font-size: 8px; font-weight: 800; font-style: italic; color: #fff; opacity: .9; }
-.island__title { font-size: 12.5px; color: rgba(255,255,255,.65); flex: 1; overflow: hidden; text-overflow: ellipsis; }
-.island__title b { color: #fff; font-weight: 600; }
-.island__eq { display: flex; align-items: center; gap: 2.5px; height: 16px; }
-.island__eq i { width: 3px; border-radius: 3px; background: linear-gradient(#f9b87a, #e0603a); animation: eq 1s var(--ease) infinite alternate; }
-.island__eq i:nth-child(1) { animation-duration: .8s; } .island__eq i:nth-child(2) { animation-duration: .55s; }
-.island__eq i:nth-child(3) { animation-duration: .95s; } .island__eq i:nth-child(4) { animation-duration: .65s; } .island__eq i:nth-child(5) { animation-duration: .75s; }
-@keyframes eq { from { height: 3px; } to { height: 16px; } }
-.island__w-main { font-size: 13px; color: rgba(255,255,255,.9); font-weight: 500; }
-.island__w-main b { font-weight: 700; color: #fff; }
-.island__w-sub { font-size: 12px; color: rgba(255,255,255,.65); font-variant-numeric: tabular-nums; }
-.island__view--nav { justify-content: center; gap: 4px; padding: 0 10px; }
-.island__view--nav a { font-size: 13.5px; font-weight: 500; color: rgba(255,255,255,.7); padding: 8px 14px; border-radius: 999px; transition: background .25s, color .25s; }
-.island__view--nav a:hover, .island__view--nav a.is-current { color: #fff; background: rgba(255,255,255,.12); }
+.nav__links a:hover, .nav__links a.is-current { color: #fff; background: rgba(255,255,255,.12); }
 
 /* =========================================================
    HERO
@@ -612,12 +579,8 @@ code { font-family: var(--mono); font-size: .88em; color: var(--champagne); }
 @media (max-width: 720px) {
   body { font-size: 16px; }
   .nav__brand span:last-child { display: none; }
-  .island[data-state="nav"] { --w: calc(100vw - 150px); }
-  .island[data-state="music"] { --w: 220px; } .island[data-state="weather"] { --w: 200px; }
-  .mac__pills { display: none; }
-  .island__title { display: none; }
-  .island__view--nav a { padding: 6px 8px; font-size: 12px; }
-  .island__view--nav a:nth-child(n+4) { display: none; }
+    .mac__pills { display: none; }
+  .nav__links { display: none; }
   .hero { padding-top: 120px; }
   .cell--pomo, .cell--tele, .cell--weather, .cell--cam, .cell--themes { grid-column: span 12; }
   .gestures__grid { grid-template-columns: 1fr; }
@@ -641,7 +604,7 @@ code { font-family: var(--mono); font-size: .88em; color: var(--champagne); }
   <!-- ============ PRELOADER ============ -->
   <div class="loader" id="loader" aria-hidden="true">
     <div class="loader__island"><span class="loader__dot"></span><span class="loader__count" id="loaderCount">0</span></div>
-    <div class="loader__word">Strata&nbsp;<em>Notch</em></div>
+    <div class="loader__word">Brought to you by&nbsp;<em>Cheni Makes :/</em></div>
   </div>
 
   <div class="grain" aria-hidden="true"></div>
@@ -651,38 +614,17 @@ code { font-family: var(--mono); font-size: .88em; color: var(--champagne); }
   <!-- ============ NAV: THE NOTCH ============ -->
   <header class="nav">
     <a href="#top" class="nav__brand" data-cursor="Home">
-      <span class="brand-mark"><i></i></span>
+      <span class="brand-mark"><svg viewBox="0 0 64 64" width="28" height="28" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#060606"/><rect x="16" y="19" width="32" height="21" rx="3" fill="none" stroke="#ffffff" stroke-width="3.6"/><line x1="11" y1="46" x2="53" y2="46" stroke="#ffffff" stroke-width="3.6" stroke-linecap="round"/></svg></span>
       <span>Strata<b>Notch</b></span>
     </a>
 
-    <div class="island" id="island" data-state="clock">
-      <div class="island__inner">
-        <!-- clock + battery -->
-        <div class="island__view island__view--clock">
-          <span class="island__time" id="islandTime">6:12 pm</span>
-          <span class="island__batt"><i>⚡</i>77%</span>
-        </div>
-        <!-- live activity -->
-        <div class="island__view island__view--music">
-          <span class="island__art"></span>
-          <span class="island__title"><b>Drive</b> · Ed Sheeran</span>
-          <span class="island__eq"><i></i><i></i><i></i><i></i><i></i></span>
-        </div>
-        <!-- weather ambient -->
-        <div class="island__view island__view--weather">
-          <span class="island__w-main">☁️ <b>22°</b> Sydney</span>
-          <span class="island__w-sub">H:23° L:13°</span>
-        </div>
-        <!-- nav links (expanded) -->
-        <nav class="island__view island__view--nav" aria-label="Primary">
-          <a href="#states">States</a>
-          <a href="#hub">Hub</a>
-          <a href="#features">Features</a>
-          <a href="#gestures">Gestures</a>
-          <a href="#privacy">Privacy</a>
-        </nav>
-      </div>
-    </div>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#states">States</a>
+      <a href="#hub">Hub</a>
+      <a href="#features">Features</a>
+      <a href="#gestures">Gestures</a>
+      <a href="#privacy">Privacy</a>
+    </nav>
 
     <a href="https://github.com/ChenithaPalugaswewa/StrataNotch/raw/main/StrataNotch.zip" class="btn btn--sm btn--glass magnetic" data-cursor="Get it">
       <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 21h14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -716,7 +658,7 @@ code { font-family: var(--mono); font-size: .88em; color: var(--champagne); }
           </a>
         </div>
         <ul class="hero__meta">
-          <li>macOS 15+</li><li>Apple Silicon &amp; Intel</li><li>Free &amp; MIT</li><li>Zero telemetry</li>
+          <li>macOS 15+</li><li>Apple Silicon &amp; Intel</li><li>Zero telemetry</li>
         </ul>
       </div>
 
@@ -1084,7 +1026,7 @@ code { font-family: var(--mono); font-size: .88em; color: var(--champagne); }
     <section class="cta" id="download">
       <div class="cta__island" aria-hidden="true"><span class="cta__ring"></span></div>
       <h2 class="cta__title"><span class="split">Give your notch</span><br /><span class="split serif"><em>something to do.</em></span></h2>
-      <p class="cta__sub">Free, open source and a featherweight 2.4&nbsp;MB universal binary.</p>
+      <p class="cta__sub">A featherweight 2.4&nbsp;MB universal binary for macOS.</p>
       <div class="hero__cta">
         <a href="https://github.com/ChenithaPalugaswewa/StrataNotch/raw/main/StrataNotch.zip" class="btn btn--primary btn--xl magnetic" data-cursor="Let’s go">
           <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 21h14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1104,7 +1046,7 @@ code { font-family: var(--mono); font-size: .88em; color: var(--champagne); }
   <footer class="footer">
     <div class="footer__big" aria-hidden="true">STRATA</div>
     <div class="footer__row">
-      <span>© 2026 Chenitha Palugaswewa · MIT License</span>
+      <span>© 2026 Chenitha Palugaswewa</span>
       <span class="footer__links"><a href="https://github.com/ChenithaPalugaswewa/StrataNotch">GitHub</a><a href="#top">Back to top ↑</a></span>
     </div>
   </footer>
@@ -1155,32 +1097,6 @@ code { font-family: var(--mono); font-size: .88em; color: var(--champagne); }
   }
   $$('.split').forEach((el) => splitInto(el, 'chars'));
   $$('.scrub-words').forEach((el) => splitInto(el, 'words'));
-
-  /* ---------- live clock in island ---------- */
-  const timeEl = $('#islandTime');
-  const tick = () => {
-    timeEl.textContent = new Date().toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }).toLowerCase();
-  };
-  tick(); setInterval(tick, 15000);
-
-  /* ---------- island state machine ---------- */
-  const island = $('#island');
-  const cycle = ['clock', 'music', 'weather', 'music'];
-  let ci = 0, hovering = false, cycleTimer;
-  const setState = (s) => {
-    island.dataset.state = s;
-  };
-  const runCycle = () => {
-    clearTimeout(cycleTimer);
-    cycleTimer = setTimeout(() => {
-      if (!hovering) { ci = (ci + 1) % cycle.length; setState(cycle[ci]); }
-      runCycle();
-    }, 3200);
-  };
-  island.addEventListener('mouseenter', () => { hovering = true; setState('nav'); });
-  island.addEventListener('mouseleave', () => { hovering = false; setState(cycle[ci]); });
-  island.addEventListener('click', () => { if (!hovering) { hovering = true; setState('nav'); } }); // touch
-  document.addEventListener('touchstart', (e) => { if (!island.contains(e.target) && hovering) { hovering = false; setState(cycle[ci]); } }, { passive: true });
 
   /* ---------- copy to clipboard ---------- */
   const toast = $('#toast');
@@ -1259,7 +1175,6 @@ code { font-family: var(--mono); font-size: .88em; color: var(--champagne); }
     document.body.classList.remove('is-loading');
     $$('.scrub-words .w').forEach((w) => (w.style.opacity = 1));
     $$('[data-count]').forEach((n) => (n.textContent = n.dataset.count));
-    setState('clock'); runCycle();
     return;
   }
 
@@ -1298,7 +1213,7 @@ code { font-family: var(--mono); font-size: .88em; color: var(--champagne); }
     window.addEventListener('pointermove', (e) => { dx(e.clientX); dy(e.clientY); rx(e.clientX); ry(e.clientY); });
     document.addEventListener('pointerover', (e) => {
       const lab = e.target.closest('[data-cursor]');
-      const hov = e.target.closest('a, button, .tilt, .island');
+      const hov = e.target.closest('a, button, .tilt');
       cur.classList.toggle('is-label', !!lab);
       cur.classList.toggle('is-hover', !lab && !!hov);
       if (lab) label.textContent = lab.dataset.cursor;
@@ -1574,7 +1489,7 @@ code { font-family: var(--mono); font-size: .88em; color: var(--champagne); }
   gsap.fromTo('.footer__big', { yPercent: 40, letterSpacing: '0.05em' }, { yPercent: 0, letterSpacing: '-0.07em', ease: 'none', scrollTrigger: { trigger: '.footer', start: 'top bottom', end: 'bottom bottom', scrub: true } });
 
   /* ---------- nav: highlight section ---------- */
-  const navLinks = $$('.island__view--nav a');
+  const navLinks = $$('.nav__links a');
   navLinks.forEach((a) => {
     const sec = $(a.getAttribute('href'));
     if (!sec) return;
