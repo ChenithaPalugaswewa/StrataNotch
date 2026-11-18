@@ -32,6 +32,9 @@
 
 ---
 
+<img width="732" height="344" alt="Screenshot 2026-11-18 at 5 45 44 pm" src="https://github.com/user-attachments/assets/37acd848-b8e4-4f1b-9b4f-660d3c92f6ab" />
+
+
 ## Download & Install
 
 > **Official Website:** **[https://stratanotch.onrender.com](https://stratanotch.onrender.com)**  
@@ -69,6 +72,11 @@ Built natively in Swift with **AppKit (`NSPanel`)** and **SwiftUI (`@Observable`
 
 Strata Notch fluidly morphs across four states powered by tuned spring physics:
 
+<img width="512" height="64" alt="Screenshot 2026-11-18 at 5 44 58 pm" src="https://github.com/user-attachments/assets/50cd88dc-5bd6-4098-a2c7-cb7381539bff" />
+
+<img width="466" height="76" alt="Screenshot 2026-11-18 at 5 44 51 pm" src="https://github.com/user-attachments/assets/565fceba-3d57-46d1-a1f3-7d1816a841a6" />
+
+
 | State | Behavior |
 | :--- | :--- |
 | **Dormant Bezel** | Click-through pure-black hardware cap or floating Dynamic Island pill. Supports **7 ambient modes**: *Pure Black (Hidden)*, *Battery Dot*, *Live Clock*, *Live Weather*, *Clock + Battery*, *Clock + Weather*, and *System Pulse (CPU & RAM)*, plus an automatic *Keep Awake* indicator badge. |
@@ -91,6 +99,9 @@ Enable **Suppress macOS Native Volume & Brightness HUD** (requires Accessibility
 - **Calendar "Up Next" Glance**: Shows your next non-all-day event within the next 24 hours via **EventKit**, with calendar color coding and automatic **1-click Join Meeting** link detection for **Zoom, Google Meet, Microsoft Teams, Webex, FaceTime, Around, Whereby, Gather, and Discord**.
 
 ### 2. Media & Audio
+
+<img width="1447" height="877" alt="Screenshot 2026-11-18 at 6 12 48 pm" src="https://github.com/user-attachments/assets/39f8c2be-4ea0-4a9c-91b2-a0f08258b1e0" />
+
 - **Universal Multi-Source Now Playing**:
   - **Apple Music** & **Spotify** via instant Distributed Notifications (`com.apple.Music.playerInfo`, `com.spotify.client.PlaybackStateChanged`), CoreAudio output-running listeners, and AppleScript (`title`, `artist`, `album`, `artwork`, `duration`, `elapsed position`, interactive timeline scrubbing, and transport controls).
   - **11 Supported Web Browsers**: *Safari*, *Safari Technology Preview*, *Orion*, *Google Chrome*, *Chrome Canary*, *Arc*, *Brave*, *Microsoft Edge*, *Vivaldi*, *Opera*, and *Dia* — inspecting HTML5 `<video>` / `<audio>` DOM state, MediaSession metadata, and **YouTube oEmbed** thumbnails (`youtube.com`, `youtu.be`, `shorts`, `live`).
@@ -103,6 +114,10 @@ Enable **Suppress macOS Native Volume & Brightness HUD** (requires Accessibility
   - **5 Presets**: *Flat*, *Bass Boost*, *Vocal*, *Spatial*, and *Custom*, plus an instant **Bypass** toggle.
 
 ### 3. File Shelf & Downloads
+
+
+<img width="1457" height="876" alt="Screenshot 2026-11-18 at 6 13 07 pm" src="https://github.com/user-attachments/assets/a615f7d0-e60e-4650-94e3-1545b4727f41" />
+
 - **Drag-from-Anywhere Auto-Open**: Dragging any file near the top bezel automatically expands the Shelf & AirDrop drop targets and holds the shelf open briefly after drop.
 - **Persistent File Shelf**:
   - Asynchronous **QuickLook** thumbnails, file size formatting, **Open**, **Reveal in Finder**, single-item **AirDrop**, remove, and drag-out support to any app.
@@ -113,6 +128,9 @@ Enable **Suppress macOS Native Volume & Brightness HUD** (requires Accessibility
   - Tracks in-progress browser downloads (`.download`, `.crdownload`, `.part`, `.partial`, `.incomplete`, `.opdownload`, `.tmp`) with a live **Download Tracker Pop-Out Pill** (determinate progress bar or animated indeterminate bar), alongside a recent Downloads switcher inside the File Shelf tab.
 
 ### 4. Focus & Productivity
+
+<img width="1470" height="873" alt="Screenshot 2026-11-18 at 6 13 16 pm" src="https://github.com/user-attachments/assets/c9bfaca9-71fa-438f-9597-5bc4bd3bc942" />
+
 - **Timers, Pomodoro & Stopwatch**:
   - **Timer**: Quick `1m`, `5m`, `10m`, `15m`, `30m` presets and `+1m` live adjustment (expanding a live compact timer jumps straight to the Focus tab).
   - **Pomodoro**: `Focus Session` (25m), `Short Break` (5m), and `Long Break` (15m) phases with completed session tracking.
@@ -128,10 +146,16 @@ Enable **Suppress macOS Native Volume & Brightness HUD** (requires Accessibility
 - **Focus / Do Not Disturb Toggles**: Displays live Focus mode status in the header and toggles macOS Focus modes (*Do Not Disturb*, *Work*, *Personal*, *Sleep*, or custom modes) via zero-flicker Shortcuts CLI or Control Center Accessibility fallback — includes a **1-click silent Focus shortcut installer**.
 
 ### 5. Weather
+
+<img width="1469" height="875" alt="Screenshot 2026-11-18 at 6 13 24 pm" src="https://github.com/user-attachments/assets/793f9935-6e79-4754-8aaa-b021ec5abd8c" />
+
 - **Zero-API-Key Weather Pipeline**: Powered by **Open-Meteo** (forecast + city geocoding) with **CoreLocation GPS**, automatic **GeoJS IP** fallback, and optional **Custom City** override in Settings.
 - **Forecast Details**: `°C` / `°F` toggle, *Feels Like*, daily *High / Low*, *Wind Speed* (`km/h`), *Humidity %*, and a **4-hour hourly forecast** with precipitation probability.
 
 ### 6. System & Quick Utilities
+
+![Uploading Screenshot 2026-11-18 at 6.13.33 pm.png…]()
+
 - **2×2 Live Telemetry Grid** (sampled every 2s while active, zero-polling IOKit power notifications):
   - **CPU**: Multi-core average load % via Mach `host_processor_info` with a 24-point smooth sparkline.
   - **Memory**: Ring gauge + GB breakdown (*Active*, *Wired*, *Compressed*, *Total*).
