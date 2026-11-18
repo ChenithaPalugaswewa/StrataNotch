@@ -1,4 +1,3 @@
-<div align="center">
 
 <h1>Strata Notch</h1>
 
@@ -26,6 +25,10 @@
 </p>
 
 </div>
+
+
+<img width="688" height="324" alt="Screenshot 2026-11-18 at 5 24 06 pm" src="https://github.com/user-attachments/assets/ce5d6c6e-5b34-40d3-ab86-7d53ecf11358" />
+<div align="center">
 
 ---
 
