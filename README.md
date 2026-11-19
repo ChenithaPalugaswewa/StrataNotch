@@ -35,6 +35,8 @@
 <img width="732" height="344" alt="Screenshot 2026-11-18 at 5 45 44 pm" src="https://github.com/user-attachments/assets/37acd848-b8e4-4f1b-9b4f-660d3c92f6ab" />
 
 
+
+
 ## Download & Install
 
 > **Official Website:** **[https://stratanotch.onrender.com](https://stratanotch.onrender.com)**  
@@ -55,7 +57,57 @@ Built natively in Swift with **AppKit (`NSPanel`)** and **SwiftUI (`@Observable`
 
 ---
 
+
 ## What's New in the Latest Update
+
+
+## Introducing Sidekick (Vertical Edge Dock)
+
+<img width="934" height="556" alt="Screenshot 2026-11-19 at 5 05 11 pm" src="https://github.com/user-attachments/assets/671a45a3-d783-4898-93f2-b49ed629ccc2" />
+<img width="393" height="433" alt="Screenshot 2026-11-19 at 5 05 29 pm" src="https://github.com/user-attachments/assets/4eee4a6d-007f-4f16-ba42-11d516b6aa03" />
+
+<img width="302" height="156" alt="Screenshot 2026-11-19 at 5 07 41 pm" src="https://github.com/user-attachments/assets/17de3013-5ae8-4414-9288-5e8ff352c51e" />
+
+**Sidekick** is a new **vertical screen-edge placement mode** in Strata Notch that lets you anchor the hub to the **Left** or **Right** edge of your display instead of (or whenever you switch from) the top hardware notch.
+
+Switch anytime in **Settings (`⌘,`) → Screen Placement → Sidekick**, with a smooth animated transition between **Top Notch**, **Sidekick (Left)**, and **Sidekick (Right)**.
+
+---
+
+### How Sidekick Works
+
+| State | Behavior |
+| :--- | :--- |
+| **Auto-Tucked Edge Badge** | Rests as a compact `44 × 44 pt` badge anchored to your chosen screen edge. When **Auto-Tuck Into Screen Edge When Idle** is enabled *(default)*, ~48% tucks unobtrusively into the bezel and slides out flush the instant your cursor approaches. |
+| **Live Compact Icon** | Displays the Strata vector emblem when idle, or morphs directly into your **Now Playing album artwork**, live **Timer / Pomodoro countdown**, or **Charging / Battery** glyph when a Live Activity is running. |
+| **Hover Info Pill & Side HUD Popups** | Hovering over the Sidekick icon reveals a floating Liquid Glass capsule pill beside it showing live **Now Playing + equalizer bars**, **active Timer**, **Time & Weather**, **Battery %**, and **Keep Awake** status. System HUD alerts (Volume, Brightness, Track Change, Downloads, Notifications) also pop right out beside the icon. |
+| **Morphing Vertical Hub** | Stretches fluidly out of the `44 × 44` edge icon into a `418 × 434 pt` vertical control center featuring a **vertical Crystal-Clear Liquid Dock rail** along the screen edge and vertical-stack layouts tailored for **Home**, **Media**, **Shelf**, **Focus**, **Weather**, and **System**. |
+
+---
+
+### Sidekick Gestures & Controls
+
+| Action | Result |
+| :--- | :--- |
+| **Hover over Sidekick Icon** | Shows the **Compact Info Pill** *(when Click to Open is enabled)* or **Auto-Expands** the full Sidekick hub *(when Click to Open is off, configurable `0.05s – 0.75s` delay)*. |
+| **Click or Pull Outward from Screen Edge** | Smoothly stretches and morphs open the Sidekick hub (`≥ 14 pt` outward drag or flick). |
+| **Drag Inward on the Outer Edge Bezel** | Squeezes and collapses the Sidekick hub back into the screen edge (`≥ 20 pt` inward drag on the outer `22 pt` bezel). |
+| **Two-Finger Trackpad Scroll (Expanded)** | Cycles up/down through the 6 vertical tabs (automatically yields when scrolling inside overflowing lists like Clipboard, Shortcuts, or File Shelf). |
+| **Two-Finger Trackpad Scroll (Compact Hover)** | Switches between active **Media ↔ Timer** Live Activities when both are running, or skips **Next / Previous** tracks. |
+| **Drag Files to the Screen Edge** | Auto-expands Sidekick directly to the **File Shelf & AirDrop** drop zones. |
+
+---
+
+### Sidekick Customization (Settings → Sidekick)
+
+When **Sidekick** is selected under **Screen Placement**, Settings automatically reveals dedicated Sidekick controls:
+
+- **Screen Edge**: Anchor Sidekick to the **Left** or **Right** edge of your display.
+- **Click to Open (Hover Shows Info Pill)**: Choose between a hover **Info Pill** (click or pull outward to expand) or automatic **Hover-to-Expand** (`0.05s – 0.75s` delay).
+- **Auto-Tuck Into Screen Edge When Idle**: Tuck the idle badge half-way into the bezel until hovered.
+- **Vertical Screen Position (`15% – 85%`)**: Slide Sidekick higher or lower along the left/right screen edge.
+- **Sidekick Style & Size**: Customize **Rim Glow** (*None*, *Subtle Frost*, *Adaptive Activity*), **Icon Corner Radius (`-4…+8 pt`)**, **Icon Opacity (`80%–100%`)**, **Expanded Panel Width (`-40…+80 pt`)**, and **Expanded Panel Height (`-8…+24 pt`)**.
+
 
 - **Configurable Open Trigger Modes**: Choose between **Hover or Drag Down** *(default)*, **Hover to Open**, or **Drag Down (Like Siri)** with 1:1 rubber-band physics, velocity-aware release, and zero-snap spring morphing.
 - **Snappier Hover & Bezel Geometry**: Tuned default hover expansion delay to **`0.09s`** (`0.05s – 0.75s` range) with refined width (`+22 pt`) and height (`+1 pt`) default offsets and zero horizontal bleed over adjacent menu bar icons.
@@ -65,6 +117,8 @@ Built natively in Swift with **AppKit (`NSPanel`)** and **SwiftUI (`@Observable`
 - **Granular Wi-Fi & Download Tracker Extensions**: Added dedicated toggles for **CoreWLAN Wi-Fi SSID, Signal & Power Toggle** and the **Download Tracker Pop-Out Pill** (with animated indeterminate & determinate progress bars).
 - **Non-Nagging Permission Helper & Sandbox Migration**: Prompts macOS Accessibility and Screen Capture modals at most once, detects competing `/Applications` copies with a **Reveal App** shortcut, and automatically migrates legacy sandboxed preferences on launch.
 - **15-Module Quick Toggle Menu**: Toggle 15 core modules and extensions directly from the macOS menu bar icon under **Active Modules**.
+
+
 
 ---
 
